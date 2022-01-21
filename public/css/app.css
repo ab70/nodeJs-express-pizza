@@ -1,0 +1,14 @@
+.dropdown-menu{
+	font-family: sans-serif;
+	font-size: 12px;
+	background-color: #121618 !important;
+}
+.dropStyle a{
+	background-color: #121618;
+	color: white;
+}
+.dropStyle a:hover{
+	background-color: #121618;
+	color: #fac564;
+}
+
