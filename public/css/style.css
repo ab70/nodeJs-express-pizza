@@ -7923,7 +7923,7 @@ h1, h2, h3, h4, h5,
     z-index: 0; }
     .pricing-entry .text:after {
       position: absolute;
-      bottom: 35%;
+      bottom: 21%;
       left: 0;
       right: 0;
       content: '';

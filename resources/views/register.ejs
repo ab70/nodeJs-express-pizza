@@ -1,6 +1,6 @@
 <section class="container login ">
     <% if(success!=''){ %>
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-success" id="alertmessage" role="alert">
         <%-success-%>
       </div>
      <% } %>
@@ -37,3 +37,10 @@
         </form>
     </div>
 </section>
+<script>
+    function hidealert(){
+        
+        document.getElementById("alertmessage").className = "hidden";
+    }
+    setTimeout("hidealert()",3500);
+</script>
