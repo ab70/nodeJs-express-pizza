@@ -1,5 +1,6 @@
 //--Server JS--
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const app = express(); //here it returns a object of express module
 const ejs = require('ejs');  //imported the ejs template engine
 const path = require('path');   //inbuilt node js path finder of folders
@@ -7,10 +8,10 @@ const expressLayout = require('express-ejs-layouts');  //imported express-ejs te
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const jwt =  require('jsonwebtoken');
-
+const flash = require('express-flash')
 
 const session = require('express-session')
-const cookieParser = require('cookie-parser');
+
 const  MongoDbStore = require('connect-mongo')
 
 
@@ -37,18 +38,20 @@ app.listen(PORT , ()=>{
 // })
 
 //session config , session works with cokkie..
+//app.set('trust proxy', 1) 
 app.use(session({
+   
     secret: process.env.SECRET_key,
     resave: false,
     store : MongoDbStore.create({
         mongoUrl: process.env.Mongoose_connect
     }),     //session storage path 
     saveUninitialized: false,
-    cookie : {maxAge: 1000*60*60*1 }  //1 hr max age
+    cookie : {maxAge: 1000 * 60 * 60 * 24 }  //1 hr max age
 }))
 //cookie parser user
 app.use(cookieParser());
-
+app.use(flash())
 //set template engine
 app.use(expressLayout);
 
