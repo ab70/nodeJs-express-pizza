@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 function authControllers() {
    return {
       login(req, res) {
-         res.render('login',{title: 'Login'})
+         res.render('login',{layout: 'layout/layout' , title: 'Login'})
       },
       //login functions(POST)
       async loginauth(req,res){

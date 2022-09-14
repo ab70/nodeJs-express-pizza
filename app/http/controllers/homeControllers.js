@@ -3,8 +3,13 @@ const res = require("express/lib/response")
 function homeControllers(){
     return {
         index(req,res){
-            res.render('home', {title: 'Pizza Web - Home'})
+            res.render('form', {title: 'Pizza Web - Home'})
+        },
+
+        test(req,res){
+            console.log(req.body);
         }
+
     }
 }
 

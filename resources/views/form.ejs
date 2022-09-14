@@ -1,0 +1,30 @@
+
+<form action="" method="post">
+    <label for="">Name</label>
+    <input type="text"  name="p_ame"><br>
+    <label for="">description</label>
+    <input type="text" name="p_desc">
+    <label for="">Multiple field form</label>
+    <div id="variantrow">
+        <input type="text" name="p[][size]" placeholder="Prod size">
+        <input type="text" name="p[][price]" placeholder="Prod price">
+    </div>
+    <button id="addNew">Add new varient</button>
+    <div></div>
+    <div>
+        <button type="submit">Post data</button>
+    </div>
+   
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var i = 1
+      $('#addNew').on('click',  function(e){
+        i++
+        e.preventDefault()
+        $('#variantrow').append(' <div id="row'+i+'"><input type="text" name="p['+i+'][size]" placeholder="Prod size"><input type="text" name="p['+i+'][price]" placeholder="Prod price"></div> ')
+        
+      }) 
+    })
+</script>

@@ -1,0 +1,211 @@
+
+
+<body>
+    
+    <div class="d-flex align-items-stretch">
+        <!-- Sidebar Navigation-->
+        <nav id="sidebar">
+            <!-- Sidebar Header-->
+            <div class="sidebar-header d-flex align-items-center p-4"><img class="avatar shadow-0 img-fluid rounded-circle" src="img/avatar-6.jpg" alt="...">
+                <div class="ms-3 title">
+                    <h1 class="h5 mb-1">Nurul Abrar</h1>
+                    <p class="text-sm text-gray-700 mb-0 lh-1">Web Designer</p>
+                </div>
+            </div><span class="text-uppercase text-gray-600 text-xs mx-3 px-2 heading mb-2">Main</span>
+            <ul class="list-unstyled">
+                <li class="sidebar-item"><a class="sidebar-link" href="/admin">
+                        <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                            <use xlink:href="#real-estate-1"> </use>
+                        </svg><span>Home </span></a></li>
+                <li class="sidebar-item"><a class="sidebar-link" href="tables.html">
+                        <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                            <use xlink:href="#portfolio-grid-1"> </use>
+                        </svg><span>Tables </span></a></li>
+                <li class="sidebar-item active"><a class="sidebar-link" href="forms.html">
+                        <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                            <use xlink:href="#survey-1"> </use>
+                        </svg><span>Forms </span></a></li>
+                <li class="sidebar-item"><a class="sidebar-link" href="#exampledropdownDropdown" data-bs-toggle="collapse">
+                        <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                            <use xlink:href="#browser-window-1"> </use>
+                        </svg><span>Example dropdown </span></a>
+                    <ul class="collapse list-unstyled " id="exampledropdownDropdown">
+                        <li><a class="sidebar-link" href="#">Page</a></li>
+                        <li><a class="sidebar-link" href="#">Page</a></li>
+                        <li><a class="sidebar-link" href="#">Page</a></li>
+                    </ul>
+                </li>
+            </ul><span class="text-uppercase text-gray-600 text-xs mx-3 px-2 heading mb-2">Extras</span>
+        </nav>
+        <div class="page-content form-page">
+            <!-- Page Header-->
+            <div class="bg-dash-dark-2 py-4">
+                <div class="container-fluid">
+                    <h2 class="h5 mb-0">Forms</h2>
+                </div>
+            </div>
+            <!-- Breadcrumb-->
+            <div class="container-fluid py-2">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 py-3 px-0">
+                        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Forms</li>
+                    </ol>
+                </nav>
+            </div>
+            <!-- Forms Section-->
+            <section class="pt-0">
+                <div class="container-fluid">
+                    <div class="row gy-4">
+                        <!-- Inline Form-->
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="h4 mb-0">Inline Form</h3>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <form class="row g-3 align-items-center">
+                                        <div class="col-lg">
+                                            <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+                                            <div class="input-group">
+                                                <div class="input-group-text">@</div>
+                                                <input class="form-control" id="inlineFormInputGroupUsername" type="text" placeholder="Username">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg">
+                                            <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                                            <select class="form-select" id="inlineFormSelectPref">
+                                                <option selected>Choose...</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg">
+                                            <button class="btn btn-primary" type="submit">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal Form-->
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="mb-0">Add Category</h3>
+                                </div>
+                                <div class="card-body pt-0 text-center">
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#myModal">Click to Add category </button>
+                                    <!-- Modal-->
+                                    <div class="modal fade text-start" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="myModalLabel">Category Name</h5>
+                                                    <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Add products category name</p>
+                                                    <form>
+                                                        <div class="mb-3">
+                                                            <label class="form-label" for="categoryInput">Category Name</label>
+                                                            <input class="form-control" id="inputCategory"  type="text" aria-describedby="emailHelp">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                                                    <button class="btn btn-primary" id="saveCat" type="button">Save Category</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Form Elements -->
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="h4 mb-0">Add product</h3>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <form class="form-horizontal" action="/" method="POST" >
+                                        <div class="my-4"></div>
+                                        
+                                        
+                                        <div class="my-4"> </div>
+                                        <div class="row">
+                                            <label class="col-sm-3 form-label">Product Details</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-material-group mb-3">
+                                                    <input class="input-material" id="productName" type="text" name="registerUsername" required>
+                                                    <label class="label-material" for="register-username">Product Name</label>
+                                                </div>
+                                                <div class="input-material-group mb-3">
+                                                    <input class="input-material" id="productDetails" type="text" name="productDetails" required>
+                                                    <label class="label-material" for="">Product Details</label>
+                                                </div>
+                                            </div>
+                                            <div class="my-4"></div>
+                                            <div class="row">
+                                            <label class="col-sm-3 form-label">Select Product Category</label>
+                                            <div class="col-sm-9">
+                                                <select class="form-select mb-3" name="category">
+                                                    <option >Select category </option>
+                                                    <% category.forEach(e => { %>
+                                                        <option value="<%=e._id%>"><%= e.name %> </option>
+                                                    <% }) %>
+                                                    
+                                                    
+                                                </select>
+                                            </div>
+                                        </div>
+                                            <div class="my-4"></div>
+                                            <div class="row">
+                                                <label class="col-sm-3 form-label" for="formFile">Product image input</label>
+                                                <div class="col-sm-9">
+                                                    <!-- <input class="form-control" name="productImage" id="formFile" type="file"> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my-4"></div>
+                                        <div class="row">
+                                            <label class="col-sm-3 form-label">Product price</label>
+                                            <div class="col-sm-9" id="variantBox">
+                                                <div class="input-group mb-3">
+                                                    <input class="form-control" type="text" name="pro[][size]" placeholder="Product Size" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <span class="mx-3"></span>
+                                                    <span class="input-group-text">$</span><span class="input-group-text">0.00</span>
+                                                    <input class="form-control" type="text" name="pro[][price]" placeholder="Product price" aria-label="Dollar amount (with dot and two decimal places)">
+                                                    <span class="mx-2"></span>
+                                                    <button class="btn btn-primary" id="addNewVariant" type="submit">Add more varient</button>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="my-4"></div>
+                                       
+                                        
+                                        
+                                        
+                                        <div class="row">
+                                            <div class="col-sm-9 ms-auto">
+                                                <button class="btn btn-secondary" type="reset">Cancel</button>
+                                                <button class="btn btn-primary" id="productSubmit" type="submit">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+    </div>
+  
+</body>
+
