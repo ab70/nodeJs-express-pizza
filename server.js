@@ -12,7 +12,8 @@ const flash = require('express-flash');    //without flash set-cookie header was
 
 const session = require('express-session')
 
-const  MongoDbStore = require('connect-mongo')
+const  MongoDbStore = require('connect-mongo');
+const axios = require('axios');
 
 
 //configs dotenv file(.env)
@@ -39,13 +40,20 @@ app.use(session({
         mongoUrl: process.env.Mongoose_connect
     }),           //session storage path 
     saveUninitialized: false,
-    cookie : {maxAge: 1000 * 60 * 60 * 1}  //1 hr max age
+    cookie : {maxAge: 1000 * 60 * 2 }  //1 hr max age
 }))
 //cookie parser user
 app.use(cookieParser());
 app.use(flash())
 //set template engine
 app.use(expressLayout);
+
+//global middleware
+app.use((req,res,next)=>{
+    res.locals.session = req.session
+    next()
+})
+
 
 //set public folder
 app.use(express.static(path.join(__dirname,'/public')));

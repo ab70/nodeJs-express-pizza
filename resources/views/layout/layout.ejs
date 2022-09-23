@@ -40,10 +40,12 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="/menu" class="nav-link">Menu</a></li>
-            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
             <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
             <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
             <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+            
+            <li class="nav-item"><a href="/cart" class="nav-link"><span id="cartCounter" class="text-white font-weight-bold"> <%= session.cart ? session.cart.totalQuantity : '' %>  </span><img src="/img/add-to-cart.png" ></a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
                 <img class="usericon" src="/img/user_icon.png" alt="">
@@ -71,6 +73,9 @@
 
 
   <script src="js/jquery.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -84,9 +89,10 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
+  <!-- <script src="js/google-map.js"></script> -->
   <script src="js/main.js"></script>
+  <script src="js/custom.js"></script>
 
   
 <footer>

@@ -1,4 +1,5 @@
 const {catSchema, prodSchema} = require('../../models/Product')
+const path = require('path')
 function adminControllers(){
     return{
         //get admin Dash
@@ -27,6 +28,29 @@ function adminControllers(){
                 console.log(err);
             }
             
+        },
+
+        async postProduct(req,res){
+            try{
+                console.log(req.body);
+                const newProduct = new prodSchema({
+                    product_name: req.body.productName,
+                    product_desc: req.body.productDetails,
+                    prod_cat: req.body.category,
+                    prod_img: req.file.filename,
+                    pro_price: req.body.pro
+                })
+                
+               
+                const addProduct = newProduct.save()
+                if(addProduct){
+                    res.redirect('/admin')
+                }
+                
+            }
+            catch(err){
+                console.log(err);
+            }
         }
     }
 }

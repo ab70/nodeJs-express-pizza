@@ -8979,3 +8979,12 @@ Custom CSS-AB
 .usericon:hover {
   color: #ffc107;
 }
+.cartHeading{ 
+  color: wheat;
+}
+.card {
+  background-color: transparent;
+}
+.summaryText{
+  color: black;
+}

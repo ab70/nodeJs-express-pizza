@@ -130,7 +130,7 @@
                                     <h3 class="h4 mb-0">Add product</h3>
                                 </div>
                                 <div class="card-body pt-0">
-                                    <form class="form-horizontal" action="/" method="POST" >
+                                    <form class="form-horizontal" action="/admin" method="POST" enctype="multipart/form-data">
                                         <div class="my-4"></div>
                                         
                                         
@@ -139,7 +139,7 @@
                                             <label class="col-sm-3 form-label">Product Details</label>
                                             <div class="col-sm-9">
                                                 <div class="input-material-group mb-3">
-                                                    <input class="input-material" id="productName" type="text" name="registerUsername" required>
+                                                    <input class="input-material" id="productName" type="text" name="productName" required>
                                                     <label class="label-material" for="register-username">Product Name</label>
                                                 </div>
                                                 <div class="input-material-group mb-3">
@@ -165,7 +165,7 @@
                                             <div class="row">
                                                 <label class="col-sm-3 form-label" for="formFile">Product image input</label>
                                                 <div class="col-sm-9">
-                                                    <!-- <input class="form-control" name="productImage" id="formFile" type="file"> -->
+                                                    <input class="form-control" name="productImage" id="formFile" type="file">
                                                 </div>
                                             </div>
                                         </div>
@@ -173,12 +173,8 @@
                                         <div class="row">
                                             <label class="col-sm-3 form-label">Product price</label>
                                             <div class="col-sm-9" id="variantBox">
-                                                <div class="input-group mb-3">
-                                                    <input class="form-control" type="text" name="pro[][size]" placeholder="Product Size" aria-label="Username" aria-describedby="basic-addon1">
-                                                    <span class="mx-3"></span>
-                                                    <span class="input-group-text">$</span><span class="input-group-text">0.00</span>
-                                                    <input class="form-control" type="text" name="pro[][price]" placeholder="Product price" aria-label="Dollar amount (with dot and two decimal places)">
-                                                    <span class="mx-2"></span>
+                                                <div class="input-group mb-3"> 
+                                                    <span></span>
                                                     <button class="btn btn-primary" id="addNewVariant" type="submit">Add more varient</button>
                                                 </div>
                                                 

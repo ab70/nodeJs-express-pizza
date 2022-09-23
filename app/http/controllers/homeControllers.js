@@ -1,14 +1,15 @@
 const res = require("express/lib/response")
+const {catSchema, prodSchema} = require('../../models/Product')
 
 function homeControllers(){
     return {
-        index(req,res){
-            res.render('form', {title: 'Pizza Web - Home'})
+        async index(req,res){
+            const product = await prodSchema.find()
+            
+            res.render('home', {title: 'Pizza Web - Home' , product: product})
         },
 
-        test(req,res){
-            console.log(req.body);
-        }
+       
 
     }
 }
