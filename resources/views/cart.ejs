@@ -7,7 +7,12 @@
             <h5 class="mb-0 cartHeading">Cart has - <%= session.cart ? session.cart.totalQuantity : 0 %> items</h5>
           </div>
           <div class="card-body">
-            <%if(!session.cart) {} 
+            <%if(!session.cart) { %>
+              <a href="/"><button type="button" class="btn btn-primary btn-lg btn-block">
+               Add something to cart
+            </button></a>
+            <%
+            } 
               else{ session.cart.items.forEach(e=> { %>
               <div class="row">
                 <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
@@ -41,7 +46,7 @@
                   </p>
                 </div>
               </div>
-              <% }) } %>
+              <% })  %>
                 <hr class="my-4" />
           </div>
         </div>
@@ -79,23 +84,31 @@
               <li
                 class="list-group-item summaryText d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                 Subtotal
-                <span class="summaryText">$53.98</span>
+                <span class="summaryText mr-2"><%=session.cart.totalPrice %>.00  </span>
+              </li>
+              <li
+                class="list-group-item text-success summaryText d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                Delivery Charge
+                <span class="summaryText mr-2 text-success">$10.00</span>
               </li>
 
               <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                 <div>
-                  <strong class="summaryText">Total Amount</strong>
+                  <strong class="summaryText text-success" >Total Amount</strong>
                   <strong>
-                    <p class="mb-0">(including VAT)</p>
+                    <p class="mb-0 text-info">(including VAT)</p>
                   </strong>
                 </div>
-                <span><strong class="summaryText">$53.98</strong></span>
+                <span><strong class="summaryText text-success font-weight-bold mr-2"><%=session.cart.totalPrice + 10.00%>.00</strong></span>
               </li>
             </ul>
-
+           
             <button type="button" class="btn btn-primary btn-lg btn-block">
               Go to checkout
             </button>
+            <%} %>
+            
+            
           </div>
         </div>
       </div>
