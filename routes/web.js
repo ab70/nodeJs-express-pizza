@@ -4,10 +4,15 @@ const menuControllers = require('../app/http/controllers/menuControllers');
 const contactControllers = require('../app/http/controllers/contactControllers');
 const cartControllers = require('../app/http/controllers/cartControllers')
 const adminControllers = require('../app/http/controllers/adminControllers');
-const auth = require('../app/http/middlewares/authMiddleware');
+const userControllers = require('../app/http/controllers/userControllers')
+
 //const uploads = require('../app/http/middlewares/upload')
 //middlewares
 const uploads = require('../app/http/middlewares/upload')
+const {userAuth,adminAuth} = require('../app/http/middlewares/authMiddleware');
+const orderControllers = require('../app/http/controllers/orderControllers');
+const res = require('express/lib/response');
+
 
 function initRoutes(app) {
 
@@ -25,12 +30,17 @@ function initRoutes(app) {
     app.get('/menu', menuControllers().menu)
 
     //adminPanel
-    app.get('/admin', adminControllers().dash )
-
+    app.get('/admin',adminAuth, adminControllers().dash )
     app.post('/savecat', adminControllers().saveCategory)
     app.post('/admin', uploads.single('productImage') , adminControllers().postProduct)
     
+    //user
+    app.get('/user', userAuth, userControllers().userDash)
+    app.post('/placeorder', userAuth, orderControllers().placeOrder)
+    
 
+    //logout
+    app.get('/logout' ,userControllers().logOut)
 }
 
 module.exports = initRoutes

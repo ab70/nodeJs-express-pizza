@@ -1,12 +1,15 @@
 const e = require('express');
 const Cart = require('../../models/Cart');
 
+
+
 function cartControllers(){
     return{
         cart(req,res){
             res.render('cart',{ title: "Cart" })
         },
         
+        //add item to cart
         updateCart(req,res){
            
             //for the first time cart create
@@ -48,7 +51,7 @@ function cartControllers(){
             
             
            
-        }
+        },
     }
 }
 module.exports = cartControllers;

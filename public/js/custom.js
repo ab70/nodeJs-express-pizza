@@ -1,5 +1,6 @@
 // const axios = require('axios').default;
 //  import axios from "axios";
+
 let cartCount = document.querySelector('#cartCounter')
 
 
@@ -11,6 +12,7 @@ function updateCart(pizza){
     })
     
 }
+
 
 document.querySelectorAll('#addToCart').forEach(
 function(btn){
@@ -33,5 +35,18 @@ function(btn){
     })
 }
 )
+
+
+//payment
+
+
+
+
+
+
+//stripe 
+
+
+
 
 

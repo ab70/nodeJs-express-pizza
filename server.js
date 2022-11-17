@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const jwt =  require('jsonwebtoken');
 const flash = require('express-flash');    //without flash set-cookie header was not working 
-
+const {loadStripe} = require('@stripe/stripe-js')
 const session = require('express-session')
 
 const  MongoDbStore = require('connect-mongo');
@@ -40,7 +40,7 @@ app.use(session({
         mongoUrl: process.env.Mongoose_connect
     }),           //session storage path 
     saveUninitialized: false,
-    cookie : {maxAge: 1000 * 60 * 2 }  //1 hr max age
+    cookie : {maxAge: 1000*60*60*6}  //6 hr max age
 }))
 //cookie parser user
 app.use(cookieParser());
@@ -51,6 +51,8 @@ app.use(expressLayout);
 //global middleware
 app.use((req,res,next)=>{
     res.locals.session = req.session
+    
+    
     next()
 })
 

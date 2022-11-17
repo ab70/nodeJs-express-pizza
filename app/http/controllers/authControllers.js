@@ -10,7 +10,7 @@ function authControllers() {
       login(req, res) {
          res.render('login',{layout: 'layout/layout' , title: 'Login'})
       },
-      //login functions(POST)
+      //login admin functions(POST)
       async loginauth(req,res){
          try {
             const user = await User.findOne({email:req.body.email});
@@ -27,12 +27,23 @@ function authControllers() {
                if(hasedPass==req.body.password){
                  // return res.status(200).json("Logged in");
                    
-                   const token = jwt.sign({id: user._id, role: user.isAdmin}, process.env.jsonSec,{expiresIn:'1h'});
-                    res.cookie('jwt_token', token ).redirect('/dashboard');
+                  const token = jwt.sign({id: user._id, role: user.isAdmin}, process.env.jsonSec,{expiresIn:'1h'});
+                  const {password, ...others} = user
+                  req.session.currentUser = user
+                  const userDash = '/user';
+                  const adminDash = '/admin';
+                  
+                  if(user.isAdmin==true){
+                     res.cookie('jwt_token',token).redirect(adminDash)
+                  }
+                  else{
+                     res.cookie('jwt_token',token).redirect(userDash)
+                  }
+                  
                   //This is used to seperate password from the response or json
-                  const  { password, ...others } = user._doc;
+                  // const  { password, ...others } = user._doc;
                   //console.log(others) //here printing that excluded value
-                  res.status(200).json(others)
+                  
                }
             }
             
@@ -41,6 +52,7 @@ function authControllers() {
             res.render('login',{success:'Failed to login account.', title: "login"})
          }
       },
+      
       register(req, res) {
          res.render('register',{success:'',title: 'Register'})
       },

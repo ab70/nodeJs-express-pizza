@@ -29,7 +29,7 @@ function adminControllers(){
             }
             
         },
-
+        //product post 
         async postProduct(req,res){
             try{
                 console.log(req.body);
