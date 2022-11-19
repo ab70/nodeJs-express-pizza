@@ -104,25 +104,25 @@
                   </strong></span>
               </li>
             </ul>
-            <form action="/placeorder" method="POST">
+            <form id="orderForm" action="/placeorder" method="POST">
               <% if(session.currentUser) { %>
 
                 <input type="text" class="col-md-12 my-2" placeholder="Write your delivery location"
                   onfocus="this.placeholder=''" name="addressToDeliver" value=" <%= session.currentUser.address %>  "
                   required>
                 <label class="label"> Select Payment Method </label>
-                <select class="form-select" id="paymentType" aria-label="Default select example">
-                  <option selected></option>
+                <select class="form-select" name="paymentType" id="paymentType" aria-label="Default select example">
+                  <option value="cash" selected>Cash On Delivery(COD)</option>
                   <option value="card">Card</option>
-                  <option value="mobileBanking">Mobile Banking</option>
-                  <option value="cash">Cash On Delivery(COD)</option>
+                  
+                  
                 </select>
                 
                 <div class="my-3" id="cardElement">
                   
                   
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block">
+                <button id="orderNow" type="submit" class="btn btn-primary btn-lg btn-block">
                   Place Order
                 </button>
                 <% } %>

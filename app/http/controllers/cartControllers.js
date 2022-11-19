@@ -10,9 +10,11 @@ function cartControllers(){
         },
         
         //add item to cart
+        /* A function that is used to update the cart. */
         updateCart(req,res){
            
-            //for the first time cart create
+            
+            /* This is checking if the cart is empty. If it is empty, it will create a new cart. */
             if (!req.session.cart) {
                 req.session.cart = {
                     items: [],
@@ -23,6 +25,7 @@ function cartControllers(){
                 cart.items.push(req.body)
                 
             }
+           
             else{
                 var cart = req.session.cart;
                 const searchi = cart.items.find(e=> e.pizzaId == req.body.pizzaId && e.pizzaSize == req.body.pizzaSize )
@@ -37,6 +40,8 @@ function cartControllers(){
             }
             var sum = 0
             var qty = 0
+
+            /* Adding the quantity of the pizza and the price of the pizza. */
             cart.items.forEach(element => {
                 sum = sum + (element.pizzaQty * element.pizzaprice)
                 qty = qty + element.pizzaQty

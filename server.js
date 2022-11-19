@@ -9,16 +9,17 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const jwt =  require('jsonwebtoken');
 const flash = require('express-flash');    //without flash set-cookie header was not working 
-const {loadStripe} = require('@stripe/stripe-js')
-const session = require('express-session')
 
+// const stripe = require('stripe')('sk_test_51M27tqIIRU9ndlE9nfd4B35ZJCfeXaBEGuFZpatuBySPRRhMNqUdmwzdIfoGJJ8sZfvE2UCkXf26bB7JNueCe3xN00wmC8OQAR');
+const session = require('express-session')
+var cors = require('cors')
 const  MongoDbStore = require('connect-mongo');
 const axios = require('axios');
 
 
 //configs dotenv file(.env)
 dotenv.config()
-
+app.use(cors())
 //db configue 
 const PORT = process.env.PORT || 3000;  //checks process if any port availablein (.env)  or use 3000
 
