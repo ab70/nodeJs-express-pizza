@@ -1,12 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thi is dashboard</title>
-</head>
-<body>
-    Hello from dashboard!!
-</body>
-</html>
+<div class="container my-2">
+    <h2>All My Orders</h2>
+    <table class="table col-md-12">
+        <tr class="headerTable">
+            <th>OrderId</th>
+            <th>Order Date</th>
+            <th>Order Details</th>
+            <th>Total </th>
+            <th>Payment Type</th>
+            <th>Payment Status</th>
+            <th>Order Status</th>
+
+        </tr>
+        <tbody>
+            <%  if(!myOrders) return;
+                myOrders.forEach(o => { %>
+                <tr>
+                    <td><%=o._id%> </td>
+                    <td><%=o.createdAt%> </td>
+                    <td>
+                        <ul>
+                            <% o.item.forEach(items => { %>
+                                <li><%= items.pizzaName%> (<%= items.pizzaSize%>)   x<%=items.pizzaQty%>  </li>
+                            <% }) %>
+                            
+                            
+                        </ul>
+                    </td>
+                    <td><%= o.totalPrice %> </td>
+                    <td><%= o.paymentType %> </td>
+                    <td <% if (o.paymentStatus=='due') { %>
+                        class="bg-warning bg-gradient"
+                    <% } %> ><%= o.paymentStatus %> </td>
+                    <td><%= o.orderStatus %> </td>
+                </tr>
+             
+            <% }) %>
+            
+        </tbody>
+    </table>
+</div>

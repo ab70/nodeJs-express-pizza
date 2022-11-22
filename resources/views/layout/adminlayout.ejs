@@ -101,12 +101,48 @@
         </div>
     </nav>
 </header>
+<div class="d-flex align-items-stretch">
+    <!-- Sidebar Navigation-->
+    <nav id="sidebar">
+        <!-- Sidebar Header-->
+        <div class="sidebar-header d-flex align-items-center p-4"><img class="avatar shadow-0 img-fluid rounded-circle" src="img/avatar-6.jpg" alt="...">
+            <div class="ms-3 title">
+                <h1 class="h5 mb-1">Nurul Abrar</h1>
+                <p class="text-sm text-gray-700 mb-0 lh-1">Web Designer</p>
+            </div>
+        </div><span class="text-uppercase text-gray-600 text-xs mx-3 px-2 heading mb-2">Main</span>
+        <ul class="list-unstyled">
+            <li class="sidebar-item"><a class="sidebar-link" href="/admin">
+                    <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                        <use xlink:href="#real-estate-1"> </use>
+                    </svg><span>Home </span></a></li>
+            <li class="sidebar-item"><a class="sidebar-link" href="/allorders">
+                    <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                        <use xlink:href="#portfolio-grid-1"> </use>
+                    </svg><span>All Orders </span></a></li>
+            <li class="sidebar-item active"><a class="sidebar-link" href="">
+                    <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                        <use xlink:href="#survey-1"> </use>
+                    </svg><span>Forms </span></a></li>
+            <li class="sidebar-item"><a class="sidebar-link" href="#exampledropdownDropdown" data-bs-toggle="collapse">
+                    <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                        <use xlink:href="#browser-window-1"> </use>
+                    </svg><span>Example dropdown </span></a>
+                <ul class="collapse list-unstyled " id="exampledropdownDropdown">
+                    <li><a class="sidebar-link" href="#">Page</a></li>
+                    <li><a class="sidebar-link" href="#">Page</a></li>
+                    <li><a class="sidebar-link" href="#">Page</a></li>
+                </ul>
+            </li>
+        </ul><span class="text-uppercase text-gray-600 text-xs mx-3 px-2 heading mb-2">Extras</span>
+    </nav>
+    <%- body -%>
+</div>
 
-<%- body -%>
 
 
 <!-- Page Footer-->
-<footer class="position-absolute bottom-0 bg-dash-dark-2 text-white text-center py-3 w-100 text-xs" id="footer">
+<footer class="position-fixed bottom-0 bg-dash-dark-2 text-white text-center py-3 w-100 text-xs" id="footer">
     <div class="container-fluid text-center">
         <!-- Please do not remove the backlink to us unless you support us at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
         <p class="mb-0 text-dash-gray">2021 &copy; Your company. Design by <a href="https://bootstrapious.com">Bootstrapious</a>.</p>
@@ -121,6 +157,7 @@
   <!-- Main File-->
   <script src="/admin/js/front.js"></script>
   <script src="/admin/js/admincustom.js"></script>
+
   <script>
   // ------------------------------------------------------- //
   //   Inject SVG Sprite - 

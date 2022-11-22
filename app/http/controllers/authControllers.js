@@ -28,8 +28,9 @@ function authControllers() {
                  // return res.status(200).json("Logged in");
                    
                   const token = jwt.sign({id: user._id, role: user.isAdmin}, process.env.jsonSec,{expiresIn:'1h'});
-                  const {password, ...others} = user
-                  req.session.currentUser = user
+                  const {password, ...others} = user._doc
+                  req.session.currentUser = others
+                  
                   const userDash = '/user';
                   const adminDash = '/admin';
                   

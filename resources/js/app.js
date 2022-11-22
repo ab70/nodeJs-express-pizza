@@ -103,6 +103,10 @@ async function stripefun(){
             console.log(err);
           })
     });
+
+
+    //modal data 
+   
 });
     
  

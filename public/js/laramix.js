@@ -5094,6 +5094,8 @@ $(document).ready( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRunt
               return _ref2.apply(this, arguments);
             };
           }());
+
+          //modal data 
         case 13:
         case "end":
           return _context3.stop();

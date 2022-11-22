@@ -1,1 +1,7 @@
 /* your styles go here */
+.headerTable{
+    background-color: aliceblue;
+}
+tr, td{
+    border: 1px solid wheat;
+}

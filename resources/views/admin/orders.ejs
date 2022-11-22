@@ -1,0 +1,95 @@
+<div class="container my-2">
+    <h2>All My Orders</h2>
+    <table class="table col-md-12">
+        <tr class="headerTable">
+            <th>OrderId</th>
+            <th>Order Date</th>
+            <th>Order Details</th>
+            <th>Total </th>
+            <th>Payment Type</th>
+            <th>Payment Status</th>
+            <th>Order Status</th>
+            <th>Action</th>
+
+        </tr>
+        <tbody>
+            <% if(!myOrders) return; myOrders.forEach(o=> { %>
+                <tr>
+                    <td>
+                        <%=o._id%>
+                    </td>
+                    <td>
+                        <%=o.createdAt%>
+                    </td>
+                    <td>
+                        <ul>
+                            <% o.item.forEach(items=> { %>
+                                <li>
+                                    <%= items.pizzaName%> (<%= items.pizzaSize%>) x<%=items.pizzaQty%>
+                                </li>
+                                <% }) %>
+
+
+                        </ul>
+                    </td>
+                    <td>
+                        <%= o.totalPrice %>
+                    </td>
+                    <td>
+                        <%= o.paymentType %>
+                    </td>
+                    <td <% if (o.paymentStatus=='due' ) { %>
+                        class="bg-gradient"
+                        <% } %> ><%= o.paymentStatus %>
+                    </td>
+                    <td  <% if (o.orderStatus=='delivered') { %>
+                     class='text-success'
+                    <% } %>  >
+                        <%= o.orderStatus %>
+                    </td>
+                    <td><button class="btn btn-primary" id="orderStatus" type="button" data-id="<%=o._id%>" data-status="<%=o.orderStatus%> "  data-bs-toggle="modal"
+                            data-bs-target="#orderStatusModal">Change O/Status </button></td>
+                </tr>
+
+
+                <% }) %>
+                    <!-- Modal -->
+
+        </tbody>
+    </table>
+    <div class="modal fade text-start" id="orderStatusModal" tabindex="-1" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Category Name</h5>
+                    <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Add products category name</p>
+                    <form>
+                        <div class="mb-3">
+                            <div class="container my-2">
+                                <input id="orderId" type="text" hidden value="">
+                                <b class="text-white">Current Status: </b><b class="text-success" id="selectedStatus"></b><br>
+                            </div>
+                          
+                            <label class="form-label" for="categoryInput">Change Order Status</label>
+                            <select name="listStatus" id="listStatus">
+                                
+                                <option value="processing">Processing</option>
+                                <option value="delivered">delivered</option>
+                                <option value="cancelled">cancelled</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-primary" id="saveStatus" type="button">Save Order Status</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

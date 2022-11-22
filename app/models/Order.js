@@ -17,7 +17,7 @@ const OrderSchema = new mongoose.Schema({
     deliveryAddress: {type:String, required: true, trim: true },
     paymentType : { type: String, trim:true,  required: true, default: 'cash'},
     paymentStatus: { type: String, enum: ['paid', 'due'], required: true, default: 'due' },
-    orderStatus: {type: String, enum:['processing', 'delivered'], required: true, default:'processing'}
+    orderStatus: {type: String, enum:['processing', 'delivered','cancelled'], required: true, default:'processing'}
 },{timestamps:true})
 
 const orderschema = mongoose.model('Order', OrderSchema)

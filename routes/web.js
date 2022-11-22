@@ -31,9 +31,12 @@ function initRoutes(app) {
 
     //adminPanel
     app.get('/admin',adminAuth, adminControllers().dash )
-    app.post('/savecat', adminControllers().saveCategory)
-    app.post('/admin', uploads.single('productImage') , adminControllers().postProduct)
-    
+    app.post('/savecat',adminAuth, adminControllers().saveCategory)
+    app.post('/admin',adminAuth, uploads.single('productImage') , adminControllers().postProduct)
+    app.get('/allorders', adminAuth, adminControllers().allOrders)
+    app.post('/updateOrderStatus', adminAuth, adminControllers().updateOrderStatus)
+
+
     //user
     app.get('/user', userAuth, userControllers().userDash)
     app.post('/placeorder', userAuth, orderControllers().placeOrder)
