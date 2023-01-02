@@ -51,9 +51,7 @@ app.use(expressLayout);
 
 //global middleware
 app.use((req,res,next)=>{
-    res.locals.session = req.session
-    
-    
+    res.locals.session = req.session   
     next()
 })
 
